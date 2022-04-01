@@ -22,6 +22,206 @@ class Horse
     private $idHorse;
 
     /**
+     * @return int
+     */
+    public function getIdHorse(): int
+    {
+        return $this->idHorse;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getRace(): ?string
+    {
+        return $this->race;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getResistance(): ?int
+    {
+        return $this->resistance;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getEndurance(): ?int
+    {
+        return $this->endurance;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getExtension(): ?int
+    {
+        return $this->extension;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getSpeed(): ?int
+    {
+        return $this->speed;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getSociability(): ?int
+    {
+        return $this->sociability;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getIntelligence(): ?int
+    {
+        return $this->intelligence;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getTemperament(): ?string
+    {
+        return $this->temperament;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getHealthStatus(): ?string
+    {
+        return $this->healthStatus;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getMoralStatus(): ?string
+    {
+        return $this->moralStatus;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getStressStatus(): ?string
+    {
+        return $this->stressStatus;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getFatigueStatus(): ?string
+    {
+        return $this->fatigueStatus;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getHungerStatus(): ?string
+    {
+        return $this->hungerStatus;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getClearliness(): ?int
+    {
+        return $this->clearliness;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getExperience(): ?int
+    {
+        return $this->experience;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getLevel(): ?int
+    {
+        return $this->level;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getStatus(): ?string
+    {
+        return $this->status;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getPrice(): ?int
+    {
+        return $this->price;
+    }
+
+    /**
+     * @return \Infrastructure
+     */
+    public function getIdInfrastructure(): \Infrastructure
+    {
+        return $this->idInfrastructure;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getIdDisease(): \Doctrine\Common\Collections\ArrayCollection|\Doctrine\Common\Collections\Collection
+    {
+        return $this->idDisease;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getIdInjury(): \Doctrine\Common\Collections\ArrayCollection|\Doctrine\Common\Collections\Collection
+    {
+        return $this->idInjury;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getIdParasite(): \Doctrine\Common\Collections\ArrayCollection|\Doctrine\Common\Collections\Collection
+    {
+        return $this->idParasite;
+    }
+
+    /**
      * @var string|null
      *
      * @ORM\Column(name="name", type="string", length=50, nullable=true)

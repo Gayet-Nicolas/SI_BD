@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Item
  *
- * @ORM\Table(name="item", indexes={@ORM\Index(name="Id_infrastructure", columns={"Id_infrastructure"}), @ORM\Index(name="Id_horse", columns={"Id_horse"}), @ORM\Index(name="Id_gamer", columns={"Id_gamer"})})
+ * @ORM\Table(name="item", indexes={@ORM\Index(name="Id_gamer", columns={"Id_gamer"}), @ORM\Index(name="Id_infrastructure", columns={"Id_infrastructure"}), @ORM\Index(name="Id_horse", columns={"Id_horse"})})
  * @ORM\Entity
  */
 class Item
@@ -20,6 +20,86 @@ class Item
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idItem;
+
+    /**
+     * @return int
+     */
+    public function getIdItem(): int
+    {
+        return $this->idItem;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getLevel(): ?int
+    {
+        return $this->level;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getFamily(): ?string
+    {
+        return $this->family;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getPrice(): ?int
+    {
+        return $this->price;
+    }
+
+    /**
+     * @return \Gamer
+     */
+    public function getIdGamer(): \Gamer
+    {
+        return $this->idGamer;
+    }
+
+    /**
+     * @return \Horse
+     */
+    public function getIdHorse(): \Horse
+    {
+        return $this->idHorse;
+    }
+
+    /**
+     * @return \Infrastructure
+     */
+    public function getIdInfrastructure(): \Infrastructure
+    {
+        return $this->idInfrastructure;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getIdCompetition(): \Doctrine\Common\Collections\ArrayCollection|\Doctrine\Common\Collections\Collection
+    {
+        return $this->idCompetition;
+    }
 
     /**
      * @var string|null
@@ -57,16 +137,6 @@ class Item
     private $price;
 
     /**
-     * @var \Infrastructure
-     *
-     * @ORM\ManyToOne(targetEntity="Infrastructure")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="Id_infrastructure", referencedColumnName="Id_infrastructure")
-     * })
-     */
-    private $idInfrastructure;
-
-    /**
      * @var \Gamer
      *
      * @ORM\ManyToOne(targetEntity="Gamer")
@@ -85,6 +155,16 @@ class Item
      * })
      */
     private $idHorse;
+
+    /**
+     * @var \Infrastructure
+     *
+     * @ORM\ManyToOne(targetEntity="Infrastructure")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Id_infrastructure", referencedColumnName="Id_infrastructure")
+     * })
+     */
+    private $idInfrastructure;
 
     /**
      * @var \Doctrine\Common\Collections\Collection

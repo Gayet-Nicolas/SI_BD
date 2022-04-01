@@ -22,6 +22,22 @@ class History
     private $idAction;
 
     /**
+     * @return int
+     */
+    public function getIdAction(): int
+    {
+        return $this->idAction;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getAction(): ?string
+    {
+        return $this->action;
+    }
+
+    /**
      * @var string|null
      *
      * @ORM\Column(name="action", type="string", length=50, nullable=true)

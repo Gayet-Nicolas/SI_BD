@@ -22,6 +22,46 @@ class HorseClub
     private $idHorseClub;
 
     /**
+     * @return int
+     */
+    public function getIdHorseClub(): int
+    {
+        return $this->idHorseClub;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getMembershipFees(): ?int
+    {
+        return $this->membershipFees;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getReceptionCapacity(): ?int
+    {
+        return $this->receptionCapacity;
+    }
+
+    /**
+     * @return \Gamer
+     */
+    public function getIdgamer(): \Gamer
+    {
+        return $this->idgamer;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getIdInfrastructure(): \Doctrine\Common\Collections\ArrayCollection|\Doctrine\Common\Collections\Collection
+    {
+        return $this->idInfrastructure;
+    }
+
+    /**
      * @var int|null
      *
      * @ORM\Column(name="membership_fees", type="integer", nullable=true)

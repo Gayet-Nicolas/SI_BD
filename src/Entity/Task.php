@@ -36,6 +36,38 @@ class Task
     private $frequency;
 
     /**
+     * @return int
+     */
+    public function getIdTask(): int
+    {
+        return $this->idTask;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getCaption(): ?string
+    {
+        return $this->caption;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getFrequency(): ?int
+    {
+        return $this->frequency;
+    }
+
+    /**
+     * @return \Item
+     */
+    public function getIdItem(): \Item
+    {
+        return $this->idItem;
+    }
+
+    /**
      * @var \Item
      *
      * @ORM\ManyToOne(targetEntity="Item")

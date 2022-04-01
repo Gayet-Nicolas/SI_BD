@@ -13,6 +13,29 @@ use Doctrine\ORM\Mapping as ORM;
 class BankTransaction
 {
     /**
+     * @return int
+     */
+    public function getIdBankTransaction(): int
+    {
+        return $this->idBankTransaction;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getAmount(): ?int
+    {
+        return $this->amount;
+    }
+
+    /**
+     * @return \Gamer
+     */
+    public function getIdGamer(): \Gamer
+    {
+        return $this->idGamer;
+    }
+    /**
      * @var int
      *
      * @ORM\Column(name="Id_bank_transaction", type="integer", nullable=false)

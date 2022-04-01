@@ -22,6 +22,30 @@ class Injury
     private $idInjury;
 
     /**
+     * @return int
+     */
+    public function getIdInjury(): int
+    {
+        return $this->idInjury;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getIdHorse(): \Doctrine\Common\Collections\ArrayCollection|\Doctrine\Common\Collections\Collection
+    {
+        return $this->idHorse;
+    }
+
+    /**
      * @var string|null
      *
      * @ORM\Column(name="name", type="string", length=50, nullable=true)

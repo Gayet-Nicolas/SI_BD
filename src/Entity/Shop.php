@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Shop
  *
- * @ORM\Table(name="shop", indexes={@ORM\Index(name="Id_item", columns={"Id_item"}), @ORM\Index(name="Id_infrastructure", columns={"Id_infrastructure"}), @ORM\Index(name="Id_equestrian_center", columns={"Id_equestrian_center"}), @ORM\Index(name="Id_horse_club", columns={"Id_horse_club"})})
+ * @ORM\Table(name="shop", indexes={@ORM\Index(name="Id_equestrian_center", columns={"Id_equestrian_center"}), @ORM\Index(name="Id_horse_club", columns={"Id_horse_club"}), @ORM\Index(name="Id_item", columns={"Id_item"}), @ORM\Index(name="Id_infrastructure", columns={"Id_infrastructure"})})
  * @ORM\Entity
  */
 class Shop
@@ -20,16 +20,6 @@ class Shop
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idShop;
-
-    /**
-     * @var \Item
-     *
-     * @ORM\ManyToOne(targetEntity="Item")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="Id_item", referencedColumnName="Id_item")
-     * })
-     */
-    private $idItem;
 
     /**
      * @var \EquestrianCenter
@@ -52,6 +42,46 @@ class Shop
     private $idInfrastructure;
 
     /**
+     * @return int
+     */
+    public function getIdShop(): int
+    {
+        return $this->idShop;
+    }
+
+    /**
+     * @return \EquestrianCenter
+     */
+    public function getIdEquestrianCenter(): \EquestrianCenter
+    {
+        return $this->idEquestrianCenter;
+    }
+
+    /**
+     * @return \Infrastructure
+     */
+    public function getIdInfrastructure(): \Infrastructure
+    {
+        return $this->idInfrastructure;
+    }
+
+    /**
+     * @return \HorseClub
+     */
+    public function getIdHorseClub(): \HorseClub
+    {
+        return $this->idHorseClub;
+    }
+
+    /**
+     * @return \Item
+     */
+    public function getIdItem(): \Item
+    {
+        return $this->idItem;
+    }
+
+    /**
      * @var \HorseClub
      *
      * @ORM\ManyToOne(targetEntity="HorseClub")
@@ -60,6 +90,16 @@ class Shop
      * })
      */
     private $idHorseClub;
+
+    /**
+     * @var \Item
+     *
+     * @ORM\ManyToOne(targetEntity="Item")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Id_item", referencedColumnName="Id_item")
+     * })
+     */
+    private $idItem;
 
 
 }

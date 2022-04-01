@@ -22,6 +22,62 @@ class Competition
     private $idCompetition;
 
     /**
+     * @return int
+     */
+    public function getIdCompetition(): int
+    {
+        return $this->idCompetition;
+    }
+
+    /**
+     * @return \DateTime|null
+     */
+    public function getStartDate(): ?\DateTime
+    {
+        return $this->startDate;
+    }
+
+    /**
+     * @return \DateTime|null
+     */
+    public function getEndDate(): ?\DateTime
+    {
+        return $this->endDate;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getFees(): ?int
+    {
+        return $this->fees;
+    }
+
+    /**
+     * @return \Infrastructure
+     */
+    public function getIdInfrastructure(): \Infrastructure
+    {
+        return $this->idInfrastructure;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getIdGamer(): \Doctrine\Common\Collections\ArrayCollection|\Doctrine\Common\Collections\Collection
+    {
+        return $this->idGamer;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getIdItem(): \Doctrine\Common\Collections\ArrayCollection|\Doctrine\Common\Collections\Collection
+    {
+        return $this->idItem;
+    }
+
+    /**
      * @var \DateTime|null
      *
      * @ORM\Column(name="start_date", type="date", nullable=true)

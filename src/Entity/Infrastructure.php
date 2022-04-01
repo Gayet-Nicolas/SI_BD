@@ -22,6 +22,94 @@ class Infrastructure
     private $idInfrastructure;
 
     /**
+     * @return int
+     */
+    public function getIdInfrastructure(): int
+    {
+        return $this->idInfrastructure;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getLevel(): ?int
+    {
+        return $this->level;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getFamily(): ?string
+    {
+        return $this->family;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getPrice(): ?int
+    {
+        return $this->price;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getRessourcesConsumption(): ?string
+    {
+        return $this->ressourcesConsumption;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getItemsCapacity(): ?int
+    {
+        return $this->itemsCapacity;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getHorsesCapacity(): ?int
+    {
+        return $this->horsesCapacity;
+    }
+
+    /**
+     * @return \EquestrianCenter
+     */
+    public function getIdEquestrianCenter(): \EquestrianCenter
+    {
+        return $this->idEquestrianCenter;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getIdHorseClub(): \Doctrine\Common\Collections\ArrayCollection|\Doctrine\Common\Collections\Collection
+    {
+        return $this->idHorseClub;
+    }
+
+    /**
      * @var string|null
      *
      * @ORM\Column(name="type", type="string", length=20, nullable=true)

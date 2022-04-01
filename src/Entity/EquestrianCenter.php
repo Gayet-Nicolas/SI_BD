@@ -22,6 +22,30 @@ class EquestrianCenter
     private $idEquestrianCenter;
 
     /**
+     * @return int
+     */
+    public function getIdEquestrianCenter(): int
+    {
+        return $this->idEquestrianCenter;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getReceptionCapacity(): ?int
+    {
+        return $this->receptionCapacity;
+    }
+
+    /**
+     * @return \Gamer
+     */
+    public function getIdGamer(): \Gamer
+    {
+        return $this->idGamer;
+    }
+
+    /**
      * @var int|null
      *
      * @ORM\Column(name="reception_capacity", type="integer", nullable=true)

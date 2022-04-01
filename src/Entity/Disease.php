@@ -13,6 +13,29 @@ use Doctrine\ORM\Mapping as ORM;
 class Disease
 {
     /**
+     * @return int
+     */
+    public function getIdDisease(): int
+    {
+        return $this->idDisease;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getIdHorse(): \Doctrine\Common\Collections\ArrayCollection|\Doctrine\Common\Collections\Collection
+    {
+        return $this->idHorse;
+    }
+    /**
      * @var int
      *
      * @ORM\Column(name="Id_disease", type="integer", nullable=false)

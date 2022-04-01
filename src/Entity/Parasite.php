@@ -29,6 +29,30 @@ class Parasite
     private $name;
 
     /**
+     * @return int
+     */
+    public function getIdParasite(): int
+    {
+        return $this->idParasite;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getIdHorse(): \Doctrine\Common\Collections\ArrayCollection|\Doctrine\Common\Collections\Collection
+    {
+        return $this->idHorse;
+    }
+
+    /**
      * @var \Doctrine\Common\Collections\Collection
      *
      * @ORM\ManyToMany(targetEntity="Horse", mappedBy="idParasite")
