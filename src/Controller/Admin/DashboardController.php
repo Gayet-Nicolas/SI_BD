@@ -42,44 +42,65 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToCrud('User', '',User::class);
-        yield MenuItem::linkToCrud('Gamer','', Gamer::class);
-        yield MenuItem::linkToCrud('Horse Club','', HorseClub::class);
-        yield MenuItem::linkToCrud('Infrastructure','', Infrastructure::class);
-        yield MenuItem::linkToCrud('Competition','', Competition::class);
-        yield MenuItem::linkToCrud('Horse','', Horse::class);
-        yield MenuItem::linkToCrud('Injury', '', Injury::class);
-        yield MenuItem::linkToCrud('Disease', '', Disease::class);
-        yield MenuItem::linkToCrud('Parasite', '', Parasite::class);
-        yield MenuItem::linkToCrud('Item','',Item::class);
-        yield MenuItem::linkToCrud('Task', '', Task::class);
-        yield MenuItem::linkToCrud('Shop', '', Shop::class);
-        yield MenuItem::linkToCrud('Equestrian Center','',  EquestrianCenter::class);
-        yield MenuItem::linkToCrud('Bank Transaction','',  BankTransaction::class);
-        yield MenuItem::linkToCrud('History', '', History::class);
-
         if (!$this->isGranted('ROLE_ADMIN')) {
-        }
-        if ($this->isGranted('ROLE_ADMIN_USER')) {
+            if ($this->isGranted('ROLE_ADMIN_USER')) {
 //table user CRUD
-        }
-        if ($this->isGranted('ROLE_DEVELOP')) {
+                yield MenuItem::linkToCrud('User', '',User::class);
+            }
+            if ($this->isGranted('ROLE_DEVELOP')) {
 // crud toutes les tables sauf user
-        }
-        if ($this->isGranted('ROLE_MODO_COMU')) {
+                yield MenuItem::linkToCrud('Gamer','', Gamer::class);
+                yield MenuItem::linkToCrud('Horse Club','', HorseClub::class);
+                yield MenuItem::linkToCrud('Infrastructure','', Infrastructure::class);
+                yield MenuItem::linkToCrud('Competition','', Competition::class);
+                yield MenuItem::linkToCrud('Horse','', Horse::class);
+                yield MenuItem::linkToCrud('Injury', '', Injury::class);
+                yield MenuItem::linkToCrud('Disease', '', Disease::class);
+                yield MenuItem::linkToCrud('Parasite', '', Parasite::class);
+                yield MenuItem::linkToCrud('Item','',Item::class);
+                yield MenuItem::linkToCrud('Task', '', Task::class);
+                yield MenuItem::linkToCrud('Shop', '', Shop::class);
+                yield MenuItem::linkToCrud('Equestrian Center','',  EquestrianCenter::class);
+                yield MenuItem::linkToCrud('Bank Transaction','',  BankTransaction::class);
+                yield MenuItem::linkToCrud('History', '', History::class);
+            }
+            if ($this->isGranted('ROLE_MODO_COMU')) {
 //table modifier ou supprimer gamer
-        }
-        if ($this->isGranted('ROLE_SPEC_HORSE')) {
+                yield MenuItem::linkToCrud('Gamer','', Gamer::class);
+            }
+            if ($this->isGranted('ROLE_SPEC_HORSE')) {
 //table modifier/visionner cheval
-        }
-        if ($this->isGranted('ROLE_COMP_ADMIN')) {
+                yield MenuItem::linkToCrud('Horse','', Horse::class);
+            }
+            if ($this->isGranted('ROLE_COMP_ADMIN')) {
 //table CRUD concours
-        }
-        if ($this->isGranted('ROLE_HISTORY_ADMIN')) {
+                yield MenuItem::linkToCrud('Competition','', Competition::class);
+            }
+            if ($this->isGranted('ROLE_HISTORY_ADMIN')) {
 //table CRUD journal
-        }
-        if ($this->isGranted('ROLE_CUSTOMER')) {
+                yield MenuItem::linkToCrud('History', '', History::class);
+            }
+            if ($this->isGranted('ROLE_CUSTOMER')) {
 //READ table competition et journal
+                yield MenuItem::linkToCrud('Competition','', Competition::class);
+                yield MenuItem::linkToCrud('History', '', History::class);
+            }
+        } else {
+            yield MenuItem::linkToCrud('User', '',User::class);
+            yield MenuItem::linkToCrud('Gamer','', Gamer::class);
+            yield MenuItem::linkToCrud('Horse Club','', HorseClub::class);
+            yield MenuItem::linkToCrud('Infrastructure','', Infrastructure::class);
+            yield MenuItem::linkToCrud('Competition','', Competition::class);
+            yield MenuItem::linkToCrud('Horse','', Horse::class);
+            yield MenuItem::linkToCrud('Injury', '', Injury::class);
+            yield MenuItem::linkToCrud('Disease', '', Disease::class);
+            yield MenuItem::linkToCrud('Parasite', '', Parasite::class);
+            yield MenuItem::linkToCrud('Item','',Item::class);
+            yield MenuItem::linkToCrud('Task', '', Task::class);
+            yield MenuItem::linkToCrud('Shop', '', Shop::class);
+            yield MenuItem::linkToCrud('Equestrian Center','',  EquestrianCenter::class);
+            yield MenuItem::linkToCrud('Bank Transaction','',  BankTransaction::class);
+            yield MenuItem::linkToCrud('History', '', History::class);
         }
     }
 }
