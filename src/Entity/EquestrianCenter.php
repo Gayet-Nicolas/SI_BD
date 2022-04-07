@@ -13,15 +13,6 @@ use Doctrine\ORM\Mapping as ORM;
 class EquestrianCenter
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="Id_equestrian_center", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idEquestrianCenter;
-
-    /**
      * @return int
      */
     public function getIdEquestrianCenter(): int
@@ -44,6 +35,14 @@ class EquestrianCenter
     {
         return $this->idGamer;
     }
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="Id_equestrian_center", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idEquestrianCenter;
 
     /**
      * @var int|null

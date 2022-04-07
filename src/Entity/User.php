@@ -29,7 +29,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         $this->username = $username;
     }
-     /**
+    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer", nullable=false)

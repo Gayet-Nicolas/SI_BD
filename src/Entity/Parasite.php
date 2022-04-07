@@ -29,6 +29,21 @@ class Parasite
     private $name;
 
     /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Horse", mappedBy="idParasite")
+     */
+    private $idHorse;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->idHorse = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
      * @return int
      */
     public function getIdParasite(): int
@@ -50,21 +65,6 @@ class Parasite
     public function getIdHorse(): \Doctrine\Common\Collections\ArrayCollection|\Doctrine\Common\Collections\Collection
     {
         return $this->idHorse;
-    }
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Horse", mappedBy="idParasite")
-     */
-    private $idHorse;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->idHorse = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
 }

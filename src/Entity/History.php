@@ -22,6 +22,13 @@ class History
     private $idAction;
 
     /**
+     * @var string|null
+     *
+     * @ORM\Column(name="action", type="string", length=50, nullable=true)
+     */
+    private $action;
+
+    /**
      * @return int
      */
     public function getIdAction(): int
@@ -36,13 +43,6 @@ class History
     {
         return $this->action;
     }
-
-    /**
-     * @var string|null
-     *
-     * @ORM\Column(name="action", type="string", length=50, nullable=true)
-     */
-    private $action;
 
 
 }

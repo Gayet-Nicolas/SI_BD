@@ -3,7 +3,6 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use MongoDB\BSON\Binary;
 
 /**
  * Gamer
@@ -14,19 +13,55 @@ use MongoDB\BSON\Binary;
 class Gamer
 {
     /**
+     * @var int
+     *
+     * @ORM\Column(name="Id_gamer", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idGamer;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="username", type="string", length=16, nullable=true)
+     */
+    private $username;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="email", type="string", length=50, nullable=true)
+     */
+    private $email;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="password", type="string", length=41, nullable=true)
+     */
+    private $password;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="lastname", type="string", length=50, nullable=true)
+     */
+    private $lastname;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="firstname", type="string", length=50, nullable=true)
+     */
+    private $firstname;
+
+    /**
      * @return int
      */
     public function getIdGamer(): int
     {
         return $this->idGamer;
-    }
-
-    /**
-     * @param int $idGamer
-     */
-    public function setIdGamer(int $idGamer): void
-    {
-        $this->idGamer = $idGamer;
     }
 
     /**
@@ -38,27 +73,11 @@ class Gamer
     }
 
     /**
-     * @param string|null $username
-     */
-    public function setUsername(?string $username): void
-    {
-        $this->username = $username;
-    }
-
-    /**
      * @return string|null
      */
     public function getEmail(): ?string
     {
         return $this->email;
-    }
-
-    /**
-     * @param string|null $email
-     */
-    public function setEmail(?string $email): void
-    {
-        $this->email = $email;
     }
 
     /**
@@ -70,27 +89,11 @@ class Gamer
     }
 
     /**
-     * @param string|null $password
-     */
-    public function setPassword(?string $password): void
-    {
-        $this->password = $password;
-    }
-
-    /**
      * @return string|null
      */
     public function getLastname(): ?string
     {
         return $this->lastname;
-    }
-
-    /**
-     * @param string|null $lastname
-     */
-    public function setLastname(?string $lastname): void
-    {
-        $this->lastname = $lastname;
     }
 
     /**
@@ -102,27 +105,11 @@ class Gamer
     }
 
     /**
-     * @param string|null $firstname
+     * @return bool|null
      */
-    public function setFirstname(?string $firstname): void
-    {
-        $this->firstname = $firstname;
-    }
-
-    /**
-     * @return int|null
-     */
-    public function getSex(): ?int
+    public function getSex(): ?bool
     {
         return $this->sex;
-    }
-
-    /**
-     * @param int|null $sex
-     */
-    public function setSex(?int $sex): void
-    {
-        $this->sex = $sex;
     }
 
     /**
@@ -134,27 +121,11 @@ class Gamer
     }
 
     /**
-     * @param \DateTime|null $birthDate
-     */
-    public function setBirthDate(?\DateTime $birthDate): void
-    {
-        $this->birthDate = $birthDate;
-    }
-
-    /**
      * @return string|null
      */
     public function getPhone(): ?string
     {
         return $this->phone;
-    }
-
-    /**
-     * @param string|null $phone
-     */
-    public function setPhone(?string $phone): void
-    {
-        $this->phone = $phone;
     }
 
     /**
@@ -166,27 +137,11 @@ class Gamer
     }
 
     /**
-     * @param string|null $address
-     */
-    public function setAddress(?string $address): void
-    {
-        $this->address = $address;
-    }
-
-    /**
      * @return string|null
      */
     public function getAvatar(): ?string
     {
         return $this->avatar;
-    }
-
-    /**
-     * @param string|null $avatar
-     */
-    public function setAvatar(?string $avatar): void
-    {
-        $this->avatar = $avatar;
     }
 
     /**
@@ -198,27 +153,11 @@ class Gamer
     }
 
     /**
-     * @param string|null $description
-     */
-    public function setDescription(?string $description): void
-    {
-        $this->description = $description;
-    }
-
-    /**
      * @return string|null
      */
     public function getWebsiteAddress(): ?string
     {
         return $this->websiteAddress;
-    }
-
-    /**
-     * @param string|null $websiteAddress
-     */
-    public function setWebsiteAddress(?string $websiteAddress): void
-    {
-        $this->websiteAddress = $websiteAddress;
     }
 
     /**
@@ -230,27 +169,11 @@ class Gamer
     }
 
     /**
-     * @param int|null $bankAccount
-     */
-    public function setBankAccount(?int $bankAccount): void
-    {
-        $this->bankAccount = $bankAccount;
-    }
-
-    /**
      * @return string|null
      */
     public function getIpAddress(): ?string
     {
         return $this->ipAddress;
-    }
-
-    /**
-     * @param string|null $ipAddress
-     */
-    public function setIpAddress(?string $ipAddress): void
-    {
-        $this->ipAddress = $ipAddress;
     }
 
     /**
@@ -262,27 +185,11 @@ class Gamer
     }
 
     /**
-     * @param \DateTime|null $createdAt
-     */
-    public function setCreatedAt(?\DateTime $createdAt): void
-    {
-        $this->createdAt = $createdAt;
-    }
-
-    /**
      * @return \DateTime|null
      */
     public function getLastConnexionDate(): ?\DateTime
     {
         return $this->lastConnexionDate;
-    }
-
-    /**
-     * @param \DateTime|null $lastConnexionDate
-     */
-    public function setLastConnexionDate(?\DateTime $lastConnexionDate): void
-    {
-        $this->lastConnexionDate = $lastConnexionDate;
     }
 
     /**
@@ -294,27 +201,11 @@ class Gamer
     }
 
     /**
-     * @param int|null $horsesCapacity
-     */
-    public function setHorsesCapacity(?int $horsesCapacity): void
-    {
-        $this->horsesCapacity = $horsesCapacity;
-    }
-
-    /**
      * @return \Doctrine\Common\Collections\Collection
      */
     public function getIdCompetition(): \Doctrine\Common\Collections\ArrayCollection|\Doctrine\Common\Collections\Collection
     {
         return $this->idCompetition;
-    }
-
-    /**
-     * @param \Doctrine\Common\Collections\Collection $idCompetition
-     */
-    public function setIdCompetition(\Doctrine\Common\Collections\ArrayCollection|\Doctrine\Common\Collections\Collection $idCompetition): void
-    {
-        $this->idCompetition = $idCompetition;
     }
 
     /**
@@ -326,60 +217,9 @@ class Gamer
     }
 
     /**
-     * @param \Doctrine\Common\Collections\Collection $idHorseClub
-     */
-    public function setIdHorseClub(\Doctrine\Common\Collections\ArrayCollection|\Doctrine\Common\Collections\Collection $idHorseClub): void
-    {
-        $this->idHorseClub = $idHorseClub;
-    }
-    /**
-     * @var int
+     * @var bool|null
      *
-     * @ORM\Column(name="Id_gamer", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private int $idGamer;
-
-    /**
-     * @var string|null
-     *
-     * @ORM\Column(name="username", type="string", length=16, nullable=true)
-     */
-    private ?string $username;
-
-    /**
-     * @var string|null
-     *
-     * @ORM\Column(name="email", type="string", length=50, nullable=true)
-     */
-    private ?string $email;
-
-    /**
-     * @var string|null
-     *
-     * @ORM\Column(name="password", type="string", length=41, nullable=true)
-     */
-    private ?string $password;
-
-    /**
-     * @var string|null
-     *
-     * @ORM\Column(name="lastname", type="string", length=50, nullable=true)
-     */
-    private ?string $lastname;
-
-    /**
-     * @var string|null
-     *
-     * @ORM\Column(name="firstname", type="string", length=50, nullable=true)
-     */
-    private ?string $firstname;
-
-    /**
-     * @var int|null
-     *
-     * @ORM\Column(name="sex", type="binary", nullable=true)
+     * @ORM\Column(name="sex", type="boolean", nullable=true)
      */
     private $sex;
 
@@ -395,49 +235,49 @@ class Gamer
      *
      * @ORM\Column(name="phone", type="string", length=20, nullable=true)
      */
-    private ?string $phone;
+    private $phone;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="address", type="string", length=50, nullable=true)
      */
-    private ?string $address;
+    private $address;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="avatar", type="string", length=50, nullable=true)
      */
-    private ?string $avatar;
+    private $avatar;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="description", type="string", length=250, nullable=true)
      */
-    private ?string $description;
+    private $description;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="website_address", type="string", length=50, nullable=true)
      */
-    private ?string $websiteAddress;
+    private $websiteAddress;
 
     /**
      * @var int|null
      *
      * @ORM\Column(name="bank_account", type="integer", nullable=true)
      */
-    private ?int $bankAccount;
+    private $bankAccount;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="ip_address", type="string", length=15, nullable=true)
      */
-    private ?string $ipAddress;
+    private $ipAddress;
 
     /**
      * @var \DateTime|null
@@ -458,7 +298,7 @@ class Gamer
      *
      * @ORM\Column(name="horses_capacity", type="integer", nullable=true)
      */
-    private ?int $horsesCapacity;
+    private $horsesCapacity;
 
     /**
      * @var \Doctrine\Common\Collections\Collection

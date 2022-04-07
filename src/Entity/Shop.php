@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Shop
  *
- * @ORM\Table(name="shop", indexes={@ORM\Index(name="Id_equestrian_center", columns={"Id_equestrian_center"}), @ORM\Index(name="Id_horse_club", columns={"Id_horse_club"}), @ORM\Index(name="Id_item", columns={"Id_item"}), @ORM\Index(name="Id_infrastructure", columns={"Id_infrastructure"})})
+ * @ORM\Table(name="shop", indexes={@ORM\Index(name="Id_infrastructure", columns={"Id_infrastructure"}), @ORM\Index(name="Id_equestrian_center", columns={"Id_equestrian_center"}), @ORM\Index(name="Id_horse_club", columns={"Id_horse_club"}), @ORM\Index(name="Id_item", columns={"Id_item"})})
  * @ORM\Entity
  */
 class Shop
@@ -22,16 +22,6 @@ class Shop
     private $idShop;
 
     /**
-     * @var \EquestrianCenter
-     *
-     * @ORM\ManyToOne(targetEntity="EquestrianCenter")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="Id_equestrian_center", referencedColumnName="Id_equestrian_center")
-     * })
-     */
-    private $idEquestrianCenter;
-
-    /**
      * @var \Infrastructure
      *
      * @ORM\ManyToOne(targetEntity="Infrastructure")
@@ -42,19 +32,31 @@ class Shop
     private $idInfrastructure;
 
     /**
+     * @var \HorseClub
+     *
+     * @ORM\ManyToOne(targetEntity="HorseClub")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Id_horse_club", referencedColumnName="Id_horse_club")
+     * })
+     */
+    private $idHorseClub;
+
+    /**
+     * @var \Item
+     *
+     * @ORM\ManyToOne(targetEntity="Item")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Id_item", referencedColumnName="Id_item")
+     * })
+     */
+    private $idItem;
+
+    /**
      * @return int
      */
     public function getIdShop(): int
     {
         return $this->idShop;
-    }
-
-    /**
-     * @return \EquestrianCenter
-     */
-    public function getIdEquestrianCenter(): \EquestrianCenter
-    {
-        return $this->idEquestrianCenter;
     }
 
     /**
@@ -82,24 +84,22 @@ class Shop
     }
 
     /**
-     * @var \HorseClub
-     *
-     * @ORM\ManyToOne(targetEntity="HorseClub")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="Id_horse_club", referencedColumnName="Id_horse_club")
-     * })
+     * @return \EquestrianCenter
      */
-    private $idHorseClub;
+    public function getIdEquestrianCenter(): \EquestrianCenter
+    {
+        return $this->idEquestrianCenter;
+    }
 
     /**
-     * @var \Item
+     * @var \EquestrianCenter
      *
-     * @ORM\ManyToOne(targetEntity="Item")
+     * @ORM\ManyToOne(targetEntity="EquestrianCenter")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="Id_item", referencedColumnName="Id_item")
+     *   @ORM\JoinColumn(name="Id_equestrian_center", referencedColumnName="Id_equestrian_center")
      * })
      */
-    private $idItem;
+    private $idEquestrianCenter;
 
 
 }

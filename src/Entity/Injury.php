@@ -22,6 +22,20 @@ class Injury
     private $idInjury;
 
     /**
+     * @var string|null
+     *
+     * @ORM\Column(name="name", type="string", length=50, nullable=true)
+     */
+    private $name;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Horse", mappedBy="idInjury")
+     */
+    private $idHorse;
+
+    /**
      * @return int
      */
     public function getIdInjury(): int
@@ -44,20 +58,6 @@ class Injury
     {
         return $this->idHorse;
     }
-
-    /**
-     * @var string|null
-     *
-     * @ORM\Column(name="name", type="string", length=50, nullable=true)
-     */
-    private $name;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Horse", mappedBy="idInjury")
-     */
-    private $idHorse;
 
     /**
      * Constructor

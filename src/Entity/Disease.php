@@ -13,6 +13,22 @@ use Doctrine\ORM\Mapping as ORM;
 class Disease
 {
     /**
+     * @var int
+     *
+     * @ORM\Column(name="Id_disease", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idDisease;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="name", type="string", length=50, nullable=true)
+     */
+    private $name;
+
+    /**
      * @return int
      */
     public function getIdDisease(): int
@@ -35,21 +51,6 @@ class Disease
     {
         return $this->idHorse;
     }
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="Id_disease", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idDisease;
-
-    /**
-     * @var string|null
-     *
-     * @ORM\Column(name="name", type="string", length=50, nullable=true)
-     */
-    private $name;
 
     /**
      * @var \Doctrine\Common\Collections\Collection

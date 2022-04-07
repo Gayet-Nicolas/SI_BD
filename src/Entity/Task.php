@@ -36,6 +36,16 @@ class Task
     private $frequency;
 
     /**
+     * @var \Item
+     *
+     * @ORM\ManyToOne(targetEntity="Item")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Id_item", referencedColumnName="Id_item")
+     * })
+     */
+    private $idItem;
+
+    /**
      * @return int
      */
     public function getIdTask(): int
@@ -66,16 +76,6 @@ class Task
     {
         return $this->idItem;
     }
-
-    /**
-     * @var \Item
-     *
-     * @ORM\ManyToOne(targetEntity="Item")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="Id_item", referencedColumnName="Id_item")
-     * })
-     */
-    private $idItem;
 
 
 }

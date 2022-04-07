@@ -22,6 +22,30 @@ class HorseClub
     private $idHorseClub;
 
     /**
+     * @var int|null
+     *
+     * @ORM\Column(name="membership_fees", type="integer", nullable=true)
+     */
+    private $membershipFees;
+
+    /**
+     * @var int|null
+     *
+     * @ORM\Column(name="reception_capacity", type="integer", nullable=true)
+     */
+    private $receptionCapacity;
+
+    /**
+     * @var \Gamer
+     *
+     * @ORM\ManyToOne(targetEntity="Gamer")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="IdGamer", referencedColumnName="Id_gamer")
+     * })
+     */
+    private $idgamer;
+
+    /**
      * @return int
      */
     public function getIdHorseClub(): int
@@ -60,30 +84,6 @@ class HorseClub
     {
         return $this->idInfrastructure;
     }
-
-    /**
-     * @var int|null
-     *
-     * @ORM\Column(name="membership_fees", type="integer", nullable=true)
-     */
-    private $membershipFees;
-
-    /**
-     * @var int|null
-     *
-     * @ORM\Column(name="reception_capacity", type="integer", nullable=true)
-     */
-    private $receptionCapacity;
-
-    /**
-     * @var \Gamer
-     *
-     * @ORM\ManyToOne(targetEntity="Gamer")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="IdGamer", referencedColumnName="Id_gamer")
-     * })
-     */
-    private $idgamer;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
