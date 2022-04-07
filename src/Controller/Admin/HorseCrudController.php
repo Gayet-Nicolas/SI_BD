@@ -3,6 +3,8 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Horse;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class HorseCrudController extends AbstractCrudController
