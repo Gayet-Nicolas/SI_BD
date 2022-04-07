@@ -25,7 +25,12 @@ class CompetitionCrudController extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
         return $actions
-            ->setPermission(Action::VIEW, 'ROLE_ADMIN')
+            ->disable(Action::DELETE, 'ROLE_CUSTOMER')
+            ->disable(Action::NEW, 'ROLE_CUSTOMER')
+            ->disable(Action::EDIT, 'ROLE_CUSTOMER')
+            ->disable(Action::NEW, 'ROLE_MODO_COMU')
+
             ;
     }
+
 }

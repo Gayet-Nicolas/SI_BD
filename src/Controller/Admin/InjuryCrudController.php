@@ -22,4 +22,12 @@ class InjuryCrudController extends AbstractCrudController
         ];
     }
     */
+    public function configureActions(Actions $actions): Actions
+    {
+        return $actions
+            ->disable(Action::DELETE, 'ROLE_SPEC_HORSE')
+            ->disable(Action::NEW, 'ROLE_SPEC_HORSE')
+
+            ;
+    }
 }

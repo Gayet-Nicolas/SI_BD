@@ -22,4 +22,10 @@ class BankTransactionCrudController extends AbstractCrudController
         ];
     }
     */
+    public function configureActions(Actions $actions): Actions
+    {
+        return $actions
+            ->disable(Action::NEW, 'ROLE_MODO_COMU')
+            ;
+    }
 }

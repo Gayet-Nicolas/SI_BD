@@ -67,14 +67,22 @@ class DashboardController extends AbstractDashboardController
             if ($this->isGranted('ROLE_MODO_COMU')) {
 //table modifier ou supprimer gamer
                 yield MenuItem::linkToCrud('Gamer','', Gamer::class);
+                yield MenuItem::linkToCrud('Bank Transaction','',  BankTransaction::class);
+                yield MenuItem::linkToCrud('Equestrian Center','',  EquestrianCenter::class);
+                yield MenuItem::linkToCrud('Horse Club','', HorseClub::class);
+                yield MenuItem::linkToCrud('Competition','', Competition::class);
             }
             if ($this->isGranted('ROLE_SPEC_HORSE')) {
 //table modifier/visionner cheval
                 yield MenuItem::linkToCrud('Horse','', Horse::class);
+                yield MenuItem::linkToCrud('Injury', '', Injury::class);
+                yield MenuItem::linkToCrud('Disease', '', Disease::class);
+                yield MenuItem::linkToCrud('Parasite', '', Parasite::class);
             }
             if ($this->isGranted('ROLE_COMP_ADMIN')) {
 //table CRUD concours
                 yield MenuItem::linkToCrud('Competition','', Competition::class);
+                yield MenuItem::linkToCrud('Infrastructure','', Infrastructure::class);
             }
             if ($this->isGranted('ROLE_HISTORY_ADMIN')) {
 //table CRUD journal
