@@ -22,4 +22,10 @@ class CompetitionCrudController extends AbstractCrudController
         ];
     }
     */
+    public function configureActions(Actions $actions): Actions
+    {
+        return $actions
+            ->setPermission(Action::VIEW, 'ROLE_ADMIN')
+            ;
+    }
 }
